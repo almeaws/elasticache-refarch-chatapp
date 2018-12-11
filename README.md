@@ -16,7 +16,7 @@ The backend service is implemented using Node.js and Socket.io, and hosted on EC
 
 The **Launch Stack** button below will launch the template in the us-east-1 region in your account:
 
-[![Launch ElastiCache Chat Application into Virginia with CloudFormation](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=chatapp&templateURL=https://s3.amazonaws.com/elasticache-refarch-chatapp/chatapp.yaml)
+[![Launch ElastiCache Chat Application into Virginia with CloudFormation](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=chatapp&templateURL=https://github.com/almeaws/elasticache-refarch-chatapp/blob/master/cloudformation/chatapp.yaml)
 
 ## Testing the example
 
