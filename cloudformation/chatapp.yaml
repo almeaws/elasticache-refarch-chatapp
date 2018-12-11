@@ -1,5 +1,15 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Parameters:
+  Vpc:
+      Type: AWS::EC2::VPC::Id
+      Description: "VPC where the instances will be placed"
+  Subnet:
+      Type: AWS::EC2::Subnet::Id
+      Description: "Subnet Id where EC2 instance will be placed"
+  KeyName:
+    Description: Name of an existing EC2 KeyPair to enable SSH access to the instance
+    Type: AWS::EC2::KeyPair::KeyName
+    ConstraintDescription: Must be the name of an existing EC2 KeyPair.
   ClusterNodeType:
     Description: The compute and memory capacity of the nodes in the Redis Cluster
     Type: String
@@ -28,16 +38,6 @@ Parameters:
     Type: Number
     Default: 2
     MinValue: 2
-  Vpc:
-      Type: AWS::EC2::VPC::Id
-      Description: "VPC where the instances will be placed"
-  Subnet:
-      Type: AWS::EC2::Subnet::Id
-      Description: "Subnet Id where EC2 instance will be placed"
-  KeyName:
-    Description: Name of an existing EC2 KeyPair to enable SSH access to the instance
-    Type: AWS::EC2::KeyPair::KeyName
-    ConstraintDescription: Must be the name of an existing EC2 KeyPair.
 Outputs:
   ApplicationUrl:
     Description: The URL to the load balancer for the application
