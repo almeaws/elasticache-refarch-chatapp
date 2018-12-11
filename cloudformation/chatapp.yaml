@@ -85,6 +85,11 @@ Resources:
       Description: AWS ElasticBeanstalk Chat Configuration Template
       PlatformArn: arn:aws:elasticbeanstalk:us-east-1::platform/Node.js running on 64bit Amazon Linux
       OptionSettings:
+      - Namespace: aws:ec2:vpc
+        OptionName: VPCId
+        Value: Ref Vpc
+        OptionName: Subnets
+        Value: Ref Subnet
       - Namespace: aws:autoscaling:asg
         OptionName: MinSize
         Value: !Ref ApplicationAutoScalingMinSize
