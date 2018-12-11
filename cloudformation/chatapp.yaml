@@ -88,6 +88,7 @@ Resources:
       - Namespace: aws:ec2:vpc
         OptionName: VPCId
         Value: Ref Vpc
+      - Namespace: aws:ec2:vpc
         OptionName: Subnets
         Value: Ref Subnet
       - Namespace: aws:autoscaling:asg
