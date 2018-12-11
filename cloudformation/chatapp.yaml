@@ -3,7 +3,10 @@ Parameters:
   Vpc:
       Type: AWS::EC2::VPC::Id
       Description: "VPC where the instances will be placed"
-  Subnet:
+  Subnet1:
+      Type: AWS::EC2::Subnet::Id
+      Description: "Subnet Id where EC2 instance will be placed"
+  Subnet2:
       Type: AWS::EC2::Subnet::Id
       Description: "Subnet Id where EC2 instance will be placed"
   KeyName:
@@ -90,7 +93,10 @@ Resources:
         Value: Ref Vpc
       - Namespace: aws:ec2:vpc
         OptionName: Subnets
-        Value: Ref Subnet
+        Value: Ref Subnet1
+      - Namespace: aws:ec2:vpc
+        OptionName: Subnets
+        Value: Ref Subnet2
       - Namespace: aws:autoscaling:asg
         OptionName: MinSize
         Value: !Ref ApplicationAutoScalingMinSize
