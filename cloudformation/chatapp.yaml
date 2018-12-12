@@ -96,7 +96,13 @@ Resources:
         Value: Ref Subnet1
       - Namespace: aws:ec2:vpc
         OptionName: Subnets
-        Value: Ref Subnet2
+        Value: Ref Subnet1
+      - Namespace: aws:ec2:vpc
+        OptionName: ELBSubnets
+        Value: Ref Subnet1
+      - Namespace: aws:ec2:vpc
+        OptionName: ELBSubnets
+        Value: Ref Subnet1
       - Namespace: aws:autoscaling:asg
         OptionName: MinSize
         Value: !Ref ApplicationAutoScalingMinSize
