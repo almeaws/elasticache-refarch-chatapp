@@ -45,6 +45,13 @@ Outputs:
   ApplicationUrl:
     Description: The URL to the load balancer for the application
     Value: !GetAtt ChatEnvironment.EndpointURL
+  Vpc:
+    Description: Vpc and subnet details
+    Value: Vpc
+  Subnet1:
+    Value: Subnet1
+  Subnet2:
+    Value: Subnet2
 Resources:
   RedisCluster:
     Type: AWS::ElastiCache::CacheCluster
@@ -90,19 +97,13 @@ Resources:
       OptionSettings:
       - Namespace: aws:ec2:vpc
         OptionName: VPCId
-        Value: Ref Vpc
+        Value: vpc-aead65d5
       - Namespace: aws:ec2:vpc
         OptionName: Subnets
-        Value: Ref Subnet1
-      - Namespace: aws:ec2:vpc
-        OptionName: Subnets
-        Value: Ref Subnet1
+        Value: subnet-5373390e,subnet-9a271efe
       - Namespace: aws:ec2:vpc
         OptionName: ELBSubnets
-        Value: Ref Subnet1
-      - Namespace: aws:ec2:vpc
-        OptionName: ELBSubnets
-        Value: Ref Subnet1
+        Value: subnet-5373390e,subnet-9a271efe
       - Namespace: aws:autoscaling:asg
         OptionName: MinSize
         Value: !Ref ApplicationAutoScalingMinSize
